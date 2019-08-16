@@ -11,16 +11,15 @@
 
         <%= form_tag("/sell/create",{multipart:true}) do %>
           <p>商品名</p>
-          <input name="title" value="title">
-               #value="<%= @item.title %>">の場合バリデーションに弾かれた後も入力値が保持される
+          <input name="title" value="<%= @item.title %>">
           <p>金額</p>
-          <input name="price" value="price">  
-          ＜p>在庫数</p>
-          <input name="stock" value="stock">
+          <input name="price" value="<%= @item.price %>">
+          <p>在庫数</p>
+          <input name="stock" value="<%= @item.stock %>">
           <p>商品説明</p>
-          <input name="description" value="description">
+          <input name="description" value="<%= @item.description %>">
           <p>商品画像</p>
-          <input type="file" name="image" value="image" >
+          <input type="file" name="image" value="<%= @item.image %>">
           <input type="submit" value="新規出品登録">
         <% end %>
       </div>
