@@ -4,18 +4,19 @@ class SellController < ApplicationController
   end
 
   def confirm
-  @item = Item.new(title: params[:title],price: params[:price],stock: params[:stock],description: params[:description],image: "default_item.jpg")
+  @item = Item.new(title: params[:title],price: params[:price],stock: params[:stock],description: params[:description],image: params[:image])
+  #@item = Item.new(item_params)
   render :new if @item.invalid?
   end
 
   def create
-    @item = Item.new(title: params[:title],price: params[:price],stock: params[:stock],description: params[:description],image: "default_item.jpg")
-    #@item = Item.new(item_params)
+    #@item = Item.new(title: params[:title],price: params[:price],stock: params[:stock],description: params[:description],image: params[:image])
+    @item = Item.new(item_params)
     if params[:image]
-      @item.image = "#{@item.id}.jpg" #表示先のviewファイルへの記述　<img src="<%= "/item_images/#{@item.image}" %>">
-      image = params[:image]
-      File.binwrite("public/item_images/#{@item.image}", image.read)
+      @item.image = "#{@item.item_id}.jpg" #表示先のviewファイルへの記述　<img src="<%= "/item_images/#{@item.image}" %>">
+      File.binwrite("public/item_images/#{@item.image}", params[:image].read)
     end
+
     if params[:back]
       format.html { render :new }
     elsif @item.save
@@ -27,5 +28,11 @@ class SellController < ApplicationController
   end
 
   def complete
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:title, :price, :stock, :description, :image)
   end
 end
