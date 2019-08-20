@@ -20,4 +20,11 @@ class SellController < ApplicationController
       render("sell/new")
     end
   end
+
+  def check
+    
+  end
+
+  def complete
+  end
 end

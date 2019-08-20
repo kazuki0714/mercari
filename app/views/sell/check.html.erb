@@ -1,0 +1,14 @@
+<%= form_for @item do |f| %>
+  <%= @item.title %>
+  <%= @item.image %>
+  <%= @item.price %>
+  <%= @item.stock %>
+  <%= @item.description %>
+  <%= @item.image %>
+  <div class="actions">
+    <%= f.submit '投稿画面に戻る', name: 'back' %>
+  </div>
+  <div class="actions">
+    <%= f.submit '投稿する' %>
+  </div>
+<% end %>
