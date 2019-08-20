@@ -9,7 +9,7 @@
           </div>
         <% end %>
 
-        <%= form_tag("/sell/create",{multipart:true}) do %>
+        <%= form_tag("/sell/confirm",{multipart:true}) do %>
           <p>商品名</p>
           <input name="title" value="<%= @item.title %>">
           <p>金額</p>
