@@ -7,7 +7,7 @@
         <ul class="header_menu_inner">
           <%# リストを作成するリンクは今後開発していくので、今は"#"。 %>
           <li><%= link_to "出品", "", class: "nav-link listNew" %></li>
-          <li><%= link_to "設定", "", class: "nav-link listNew" %></li>
+          <li><%= link_to "設定", edit_user_registration_path, class: "nav-link listNew" %></li>
           <li><%= link_to "サインアウト", destroy_user_session_path, class: "nav-link", method: :delete %></li>
         </ul>
       </li>

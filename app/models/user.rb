@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :addresses
   has_many :payments
   has_many :histories
+
+  validates :name, presence: true, length: { maximum: 20 }
 end
