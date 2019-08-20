@@ -11,6 +11,9 @@
 
   <body>
 
+    <%# ヘッダー部分を共通化して app/views/partial/_header.html.erb のコードを表示%>
+    <%= render 'partial/header' %>
+
     <!-- ==========ここからフラッシュメッセージ========== -->
     <% if flash[:notice] %>
       <div class="alert alert-info"><%= flash[:notice] %></div>
