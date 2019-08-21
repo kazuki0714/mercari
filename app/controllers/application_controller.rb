@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :zipcode, :address, :apartment])
       devise_parameter_sanitizer.permit(:account_update, keys: [:name, :zipcode, :string, :apartment])
     end
+
+    def after_sign_out_path_for(resource)
+    '/users/sign_in' #サインアウト後はログイン画面に遷移
+    end
+
 end

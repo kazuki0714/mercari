@@ -1,8 +1,8 @@
 
-  <h1>商品一覧</h1>
+  <h4>商品一覧</h4>
 <div class="main posts-index">
   <% @items.each do |item| %>
-    <li>
+  　<div class="item-container">
      <div class="item-image">
            <img src="<%= "/item_images/#{item.image}" %>">
      </div>
@@ -12,6 +12,6 @@
      <div class="item-price">
            <%= item.price %>
      </div>
-    </li>
+   </div>
   <% end %>
 </div>
