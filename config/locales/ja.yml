@@ -1,5 +1,12 @@
 ja:
   activerecord:
+    errors:
+      models:
+        item:
+          attributes:
+            title:
+              brank: "商品名が空白です"
+
     attributes:
       user:
         name: "お名前"
@@ -9,3 +16,10 @@ ja:
         zipcode: "郵便番号"
         address: "住所"
         apartment: "マンション名（任意）"
+
+  #      item:
+  #        title: "商品名"
+  #        price: "金額"
+  #        stock: "在庫数"
+  #        description: "商品説明"
+  #        image: "商品画像"
