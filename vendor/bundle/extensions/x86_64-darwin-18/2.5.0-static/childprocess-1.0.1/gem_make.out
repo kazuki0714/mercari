@@ -1,0 +1,5 @@
+current directory: /Users/miyayuka/Github/mercari/vendor/bundle/gems/childprocess-1.0.1/ext
+/Users/miyayuka/.rbenv/versions/2.5.1/bin/ruby mkrf_conf.rb
+
+current directory: /Users/miyayuka/Github/mercari/vendor/bundle/gems/childprocess-1.0.1/ext
+/Users/miyayuka/.rbenv/versions/2.5.1/bin/ruby -rrubygems /Users/miyayuka/Github/mercari/vendor/bundle/gems/rake-12.3.3/exe/rake RUBYARCHDIR\=/Users/miyayuka/Github/mercari/vendor/bundle/extensions/x86_64-darwin-18/2.5.0-static/childprocess-1.0.1 RUBYLIBDIR\=/Users/miyayuka/Github/mercari/vendor/bundle/extensions/x86_64-darwin-18/2.5.0-static/childprocess-1.0.1

@@ -1,2 +1,17 @@
-<h1>app/views/top/index</h1>
-<p>ここに商品一覧</p>
+
+  <h1>商品一覧</h1>
+<div class="main posts-index">
+  <% @items.each do |item| %>
+    <li>
+     <div class="item-image">
+           <img src="<%= "/item_images/#{item.image}" %>">
+     </div>
+     <div class="item-title">
+           <%= item.title %>
+     </div>
+     <div class="item-price">
+           <%= item.price %>
+     </div>
+    </li>
+  <% end %>
+</div>
