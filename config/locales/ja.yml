@@ -6,3 +6,6 @@ ja:
         password: "パスワード"
         password_confirmation: "パスワード確認"
         email: "メールアドレス"
+        zipcode: "郵便番号"
+        address: "住所"
+        apartment: "マンション名（任意）"
