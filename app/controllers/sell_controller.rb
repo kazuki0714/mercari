@@ -33,6 +33,6 @@ class SellController < ApplicationController
   private
 
   def item_params
-    params.permit(:title, :price, :stock, :description, :image)
+    params.require(:item).permit(:title, :price, :stock, :description, :image)
   end
 end
