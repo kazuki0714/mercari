@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* 19/8/15：ER図に基づいてモデル作成(app/models 参照)
