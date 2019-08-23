@@ -1,2 +1,19 @@
-<h1>Top#index</h1>
-<p>Find me in app/views/top/index.html.erb</p>
+
+  <h4>商品一覧</h4>
+<div class="main item-index">
+  <% @items.each do |item| %>
+  　<div class="item-container">
+     <div class="item-image">
+            <img src="<%= item.image %>" width="100">
+     </div>
+     <div class="item-title">
+           <%= item.title %>
+     </div>
+     <div class="item-price">
+           <%= item.price %>
+     </div>
+   </div>
+  <% end %>
+</div>
+
+<%= will_paginate @items %>
