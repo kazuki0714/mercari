@@ -29,6 +29,9 @@
     <%= f.hidden_field :description%>
     <%= @item.description %>
     </p>
+     <p>
+     <%= f.hidden_field :user_id, :value => current_user.id %>
+    </p>
   </div>
    <%= f.submit '戻る', name: 'back' %>
    <%= f.submit '送信する' %>
