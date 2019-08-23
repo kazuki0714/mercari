@@ -1,5 +1,5 @@
 class SellController < ApplicationController
-   before_action :authenticate_user!, only: [:new, :create]
+   before_action :authenticate_user!
 
   def new
     @item = Item.new
@@ -30,6 +30,13 @@ class SellController < ApplicationController
   end
 
   def complete
+
+  end
+
+  def history
+  @current_user = User.find_by(id: session[:user_id])
+  @items=Item.joins(:users).where(id: @current_user.id)
+  @cart=Cart.joins(:items).where(items: {id: params[:id]})
   end
 
   private
