@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def set_current_user
+    current_user = User.find_by(id: session[:user_id])
+  end
+
+
+
   protected
 
     def configure_permitted_parameters
@@ -15,7 +21,5 @@ class ApplicationController < ActionController::Base
     '/users/sign_in' #サインアウト後はログイン画面に遷移
     end
 
-    def set_current_user
-      current_user = User.find_by(id: session[:user_id])
-    end
+
 end
