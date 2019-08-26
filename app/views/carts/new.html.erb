@@ -36,7 +36,9 @@
    <%= @item.description %>
    </p>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :item_id, :value => current_user.id %>
+
+
+
  </div>
   <%= f.submit '戻る', name: 'back' %>
   <%= f.submit '商品購入に進む' %>

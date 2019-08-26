@@ -1,0 +1,23 @@
+
+<h3>カート確認画面</h3>
+<% @cart_items.each do |item| %>
+  <div class="entry">
+    <%= image_tag(item.image_url) %>
+    <h3><%= item.title %></h3>
+    <%= sanitize(item.description) %>
+    <div class="price_line">
+      <span class="price"><%= number_to_currency(item.price, unit: "￥")  %></span>
+      <strong>合計金額</strong>
+      <%=@cart_items.all.sum(:price)%>
+      <strong>小計</strong>
+      <%=@cart_items.all.sum(:quantity)%>
+      <% @line_item.item = item %>
+      <%= form_for(@line_item) do |l| %>
+        <%= l.hidden_field :cart_id, id: "cart_id_#{cart.id}" %>
+        <%= l.hidden_field :cart_item_id, id: "cart_item_id_#{cart_item.id}" %>
+        <%= l.hidden_field :item_id, id: "item_id_#{item.id}"%>
+        <%= l.submit "購入する" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
