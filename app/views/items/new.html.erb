@@ -1,0 +1,29 @@
+<div class="main item-new">
+  <div class="container">
+    <div class="form-heading">新規出品登録</div>
+    <div class="form item-form">
+      <div class="form-body">
+        <% @item.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+
+        <%= form_tag("/items/confirm",{multipart:true}) do %>
+
+          <p>商品名</p>
+          <input name="title" value="<%= @item.title %>" id="item_title">
+          <p>金額</p>
+          <input name="price" value="<%= @item.price %>" id="item_price">
+          <p>在庫数</p>
+          <input name="stock" value="<%= @item.stock %>" id="item_stock">
+          <p>商品説明</p>
+          <input name="description" value="<%= @item.description %>" id="item_description">
+          <p>商品画像</p>
+          <input type="file" name="image" value="<%= @item.image %>" id="item_image">
+          <input type="submit" value="新規出品登録">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
