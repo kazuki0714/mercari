@@ -1,23 +1,42 @@
 
 <h3>カート確認画面</h3>
-<% @cart_items.each do |item| %>
-  <div class="entry">
-    <%= image_tag(item.image_url) %>
-    <h3><%= item.title %></h3>
-    <%= sanitize(item.description) %>
-    <div class="price_line">
-      <span class="price"><%= number_to_currency(item.price, unit: "￥")  %></span>
-      <strong>合計金額</strong>
-      <%=@cart_items.all.sum(:price)%>
-      <strong>小計</strong>
-      <%=@cart_items.all.sum(:quantity)%>
-      <% @line_item.item = item %>
-      <%= form_for(@line_item) do |l| %>
-        <%= l.hidden_field :cart_id, id: "cart_id_#{cart.id}" %>
-        <%= l.hidden_field :cart_item_id, id: "cart_item_id_#{cart_item.id}" %>
-        <%= l.hidden_field :item_id, id: "item_id_#{item.id}"%>
-        <%= l.submit "購入する" %>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+
+ <div class="cart_items-info">
+   <% @cart_items.each do |item| %>
+     <strong>購入数</strong>
+    <%=item.quantity%>
+    <strong>合計金額</strong>
+    <%=item.all.sum(:price)%>
+    <strong>小計</strong>
+    <%=item.all.sum(:quantity)%>
+   <% end %>
+ </div>
+
+ <div class="item_info">
+   <% @items.each do |item| %>
+   <strong>商品名</strong>
+   <p>
+   <%= @item.title %>
+   </p>
+   <strong>商品画像</strong>
+   <p>
+   <img src="<%= @item.image %>" width="200">
+   </p>
+   <strong>価格</strong>
+   <p>
+  <%= @item.price %>
+  </p>
+  <strong>在庫数</strong>
+   <p>
+  <%= @item.stock %>
+  </p>
+  <strong>商品説明</strong>
+   <p>
+  <%= @item.description %>
+    <% end %>
+ </div>
+
+ <%= form_for(@cart) do |l| %>
+   <%= l.hidden_field :item_id, id: "item_id_#{item.id}"%> コントローラでstatus変える処理をする
+   <%= l.submit "購入する" %>
+ <% end %>
