@@ -1,0 +1,39 @@
+
+
+  <%= form_for @item do |f| %>
+  <div>
+   <h2>メッセージ確認</h2>
+   <div>
+     <strong>商品名</strong>
+     <p>
+    　<%= f.hidden_field :title %>
+    　<%= @item.title %>
+     </p>
+     <strong>商品画像</strong>
+     <p>
+  　  <%= f.hidden_field :image %>
+     <img src="<%= @item.image %>" width="100">
+  　  </p>
+    <strong>価格</strong>
+     <p>
+    <%= f.hidden_field :price %>
+    <%= @item.price %>
+    </p>
+    <strong>在庫数</strong>
+     <p>
+    <%= f.hidden_field :stock %>
+    <%= @item.stock %>
+    </p>
+    <strong>商品説明</strong>
+     <p>
+    <%= f.hidden_field :description%>
+    <%= @item.description %>
+    </p>
+     <p>
+     <%= f.hidden_field :user_id, :value => current_user.id %>
+    </p>
+  </div>
+   <%= f.submit '戻る', name: 'back' %>
+   <%= f.submit '送信する' %>
+  </div>
+  <% end %>

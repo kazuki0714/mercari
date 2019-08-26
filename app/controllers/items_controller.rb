@@ -1,4 +1,4 @@
-class SellController < ApplicationController
+class ItemsController < ApplicationController
    before_action :authenticate_user!
 
   def new
@@ -7,6 +7,7 @@ class SellController < ApplicationController
 
   def confirm
   @item = Item.new(title: params[:title],price: params[:price],stock: params[:stock],description: params[:description],image: params[:image],user_id: params[:user_id])
+  #@item = Item.new(item_params)
   render :new if @item.invalid?
   end
 
@@ -33,9 +34,14 @@ class SellController < ApplicationController
 
   end
 
+ def show
+  @item = Item.find_by(id: params[:id])
+ end
+
   private
 
   def item_params
-    params.require(:item).permit(:user_id, :title, :price, :stock, :description, :image)
+    params.require(:item).permit(:user_id, :title, :price, :stock, :description, :image,carts_attributes:[:quantity])
   end
+
 end

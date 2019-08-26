@@ -1,4 +1,4 @@
-<div class="main sell-new">
+image<div class="main sell-new">
   <div class="container">
     <div class="form-heading">新規出品登録</div>
     <div class="form sell-form">
@@ -10,6 +10,7 @@
         <% end %>
 
         <%= form_tag("/sell/confirm",{multipart:true}) do %>
+
           <p>商品名</p>
           <input name="title" value="<%= @item.title %>">
           <p>金額</p>
@@ -26,3 +27,23 @@
     </div>
   </div>
 </div>
+
+<%= form_for @item, :url sell_confirm_path, :html => { :multipart => true } do |f| %>
+
+<%= f.label :"商品名" %>
+<%= f.text_field :title %>
+
+<%= f.label :"画像" %>
+<%= f.file_field :image %>
+
+<%= f.label :"価格" %>
+<%= f.text_field :price %>
+
+<%= f.label :"在庫数" %>
+<%= f.text_field :stock %>
+
+<%= f.label :"商品説明" %>
+<%= f.text_field :description %>
+
+<%= f.submit "確認画面へ", class: "btn btn-large btn-primary" %>
+<% end %>
