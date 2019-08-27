@@ -1,44 +1,20 @@
+<p>検索結果</p>
+<%= form_tag(items_search_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索', :name => nil %>
+<% end %>
 
+  <h4>商品一覧</h4>
+<div class="main item-index">
+  <% @items.each do |item| %>
+  <%= link_to(item_path(item), class: 'list-content') do %>
+     <div class="item-image">
+          <img src="<%= item.image %>" width="100">
+           <%= item.title %>
+           <%= item.price %>
+     </div>
+    <% end %>
+    <% end %>
 
- <%= form_for @item, :url => carts_add_path do |f| %>
- <div>
-  <h2>商品詳細</h2>
-  <div class="item-quantity">
-    <%= f.fields_for :cart_items do |h| %>
-      <strong>購入数</strong>
-        <%= h.number_field :quantity,min:1,max:@item.stock,step:1 %> <br>
-        <% end %>
-  </div>
-  <div>
-    <strong>商品名</strong>
-    <p>
-    <%= f.hidden_field :title %>
-    <%= @item.title %>
-    </p>
-    <strong>商品画像</strong>
-    <p>
-    <%= f.hidden_field :image %>
-    <img src="<%= @item.image %>" width="200">
-    </p>
-    <strong>価格</strong>
-    <p>
-   <%= f.hidden_field :price %>
-   <%= @item.price %>
-   </p>
-   <strong>在庫数</strong>
-    <p>
-   <%= f.hidden_field :stock %>
-   <%= @item.stock %>
-   </p>
-   <strong>商品説明</strong>
-    <p>
-   <%= f.hidden_field :description%>
-   <%= @item.description %>
-   </p>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :item_id, :value => current_user.id %>
- </div>
-  <%= f.submit '戻る', name: 'back' %>
-  <%= f.submit '商品購入に進む' %>
- </div>
- <% end %>
+</div>
+<%= will_paginate @items %>

@@ -4,18 +4,17 @@ Rails.application.routes.draw do
   resources :carts, only: [:show]
 
   root "top#index"
-
-
-  #get "items/:id" => "items#show"
-  post 'carts/add' => 'carts#add'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'carts/complete'  => 'carts#complete'
+  post 'carts/create' => 'carts#create'
   get 'carts/show'  => 'carts#show'
+  post 'carts/in' => 'carts#in'
   get "items/:id" => "carts#new"
-
+  get "items/noresult" => "items#noresult"
+  get "items/search" => "items#seach"
   post 'carts/update' => 'carts#update'
   delete 'carts/delete' => 'carts#delete'
   post "carts/create" => "carts#create"
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get "users/nologin" => "users#nologin"
   get "users/mypage/sell_history" => "users#sell_history"
