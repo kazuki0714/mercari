@@ -3,7 +3,7 @@ before_action :current_cart
 before_action :setup_cart_item!, only: [:add]
 
 def new
-
+    @item=Item.find_by(id: params[:id])
     @cart_item = @cart.cart_items.build(item_id: params[:item_id])
     @cart_item.save
     flash[:notice]="商品情報がカートに追加されました。"

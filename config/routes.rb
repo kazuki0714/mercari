@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   get "users/nologin" => "users#nologin"
   get "users/mypage/sell_history" => "users#sell_history"
-
+  get "users/mypage" => "users#mypage"
 
   get "items/complete"  => "items#complete"
   post "items/create" => "items#create"
