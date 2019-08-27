@@ -1,42 +1,40 @@
 
 <h3>カート確認画面</h3>
 
- <div class="cart_items-info">
-   <% @cart_items.each do |item| %>
+
+ <%= form_for :cart_item do |l| %>
+ <div class="cart-info">
      <strong>購入数</strong>
-    <%=item.quantity%>
+    <%=l.quantity%>
     <strong>合計金額</strong>
-    <%=item.all.sum(:price)%>
+    <%=l.all.sum(:price)%>
     <strong>小計</strong>
-    <%=item.all.sum(:quantity)%>
-   <% end %>
+    <%=l.all.sum(:quantity)%>
  </div>
+  <%= l.hidden_field :item_id, id:"#{item.id}"%>
+  <%= l.submit "購入する" %>
 
  <div class="item_info">
-   <% @items.each do |item| %>
    <strong>商品名</strong>
    <p>
-   <%= @item.title %>
+   <%= l.title %>
    </p>
    <strong>商品画像</strong>
    <p>
-   <img src="<%= @item.image %>" width="200">
+   <img src="<%= l.image %>" width="200">
    </p>
    <strong>価格</strong>
    <p>
-  <%= @item.price %>
+  <%= l.price %>
   </p>
   <strong>在庫数</strong>
    <p>
-  <%= @item.stock %>
+  <%= l.stock %>
   </p>
   <strong>商品説明</strong>
    <p>
-  <%= @item.description %>
-    <% end %>
- </div>
+  <%= l.description %>
+   </div>
 
- <%= form_for(@cart) do |l| %>
-   <%= l.hidden_field :item_id, id: "item_id_#{item.id}"%> コントローラでstatus変える処理をする
-   <%= l.submit "購入する" %>
+
  <% end %>

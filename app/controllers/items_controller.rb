@@ -35,8 +35,12 @@ class ItemsController < ApplicationController
   end
 
  def show
-  @items = Item.all.order(created_at: :desc)
-  @items = Item.paginate(page: params[:page], per_page: 20)
+  @item = Item.find(params[:id])
+ end
+
+ def quantity
+  @item = Item.find(params[:id])
+  @cart_item=""
  end
 
  def search
@@ -48,6 +52,7 @@ class ItemsController < ApplicationController
 
   def noresult
   end
+
   private
 
   def item_params

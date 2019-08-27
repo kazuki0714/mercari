@@ -7,14 +7,15 @@
   <h4>商品一覧</h4>
 <div class="main item-index">
   <% @items.each do |item| %>
-  <%= link_to("/carts/new", class: 'list-content') do %>
      <div class="item-image">
           <img src="<%= item.image %>" width="100">
            <%= item.title %>
            <%= item.price %>
+            <%= link_to '詳細へ', "items/#{item.id}" %>
      </div>
     <% end %>
-    <% end %>
+
+
 
 </div>
 <%= will_paginate @items %>
