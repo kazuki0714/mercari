@@ -6,14 +6,14 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-  @item = Item.new(title: params[:title],price: params[:price],stock: params[:stock],description: params[:description],image: params[:image],user_id: params[:user_id])
-  #@item = Item.new(item_params)
+ @item = Item.new(title: params[:title],price: params[:price],stock: params[:stock],description: params[:description],image: params[:image],user_id: params[:user_id])
+
   render :new if @item.invalid?
   end
 
   def create
-    #item = Item.new(title: params[:title],price: params[:price],stock: params[:stock],description: params[:description],image: params[:image], user_id: params[:user_id])
-    @item = Item.new(item_params)
+    @user=current_user
+    @item =@user.items.create!(item_params)
     #@item = @user.items.create!(item_params)
     if params[:image]
       @item.image = "#{@item.item_id}.jpg" #表示先のviewファイルへの記述　<img src="<%= "/item_images/#{@item.image}" %>">
@@ -35,8 +35,12 @@ class ItemsController < ApplicationController
   end
 
  def show
-  @items = Item.all.order(created_at: :desc)
-  @items = Item.paginate(page: params[:page], per_page: 20)
+  @item = Item.find(params[:id])
+ end
+
+ def quantity
+  @item = Item.find(params[:id])
+  @cart_item=""
  end
 
  def search
@@ -48,10 +52,11 @@ class ItemsController < ApplicationController
 
   def noresult
   end
+
   private
 
   def item_params
-    params.require(:item).permit(:user_id, :title, :price, :stock, :description, :image,carts_attributes:[:quantity])
+    params.require(:item).permit(:user_id, :title, :price, :stock, :description, :image)
   end
 
 end

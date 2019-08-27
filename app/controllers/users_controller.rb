@@ -10,7 +10,9 @@ class UsersController < ApplicationController
   @items=current_user.items.all
   @cart=Cart.joins(:items).where(items: {id: params[:id]})
   render("users/nologin")
+
+  def mypage
   end
 
-
+end
 end
