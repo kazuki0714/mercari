@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get 'carts/show'  => 'carts#show'
   post 'carts/in' => 'carts#in'
   get "items/:id" => "carts#new"
-
+  get "items/noresult" => "items#noresult"
+  get "items/search" => "items#seach"
   post 'carts/update' => 'carts#update'
   delete 'carts/delete' => 'carts#delete'
   post "carts/create" => "carts#create"

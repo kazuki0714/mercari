@@ -1,4 +1,9 @@
 
+<%= form_tag("/items/show",:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索', :name => nil %>
+<% end %>
+
   <h4>商品一覧</h4>
 <div class="main item-index">
   <% @items.each do |item| %>

@@ -41,15 +41,13 @@ def delete
    render action: 'show'
 end
 
-##protected
-
-#def cart_params
-#  params.require(:cart).permit(:item_id, :cart_item_id)
-#end
-#def item_params
-#  params.require(:item).permit(:user_id, :title, :price, :stock, :description, :image, cart_items_attributes:[:quantity])
-#end
 private
+def cart_params
+  params.require(:cart).permit(:item_id, :cart_item_id)
+end
+def item_params
+  params.require(:item).permit(:user_id, :title, :price, :stock, :description, :image, cart_items_attributes:[:quantity])
+end
 
  def setup_cart_item!
    @cart_item = @cart.cart_items.find_by(item_id: params[:item_id])

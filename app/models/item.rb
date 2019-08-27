@@ -5,4 +5,8 @@ class Item < ApplicationRecord
   validates :title, presence: true
   mount_uploader :image, ImageUploader
 
+  def self.search(search)
+     return Item.all unless search
+     Item.where(['content LIKE ?', "%#{search}%"])
+  end
 end

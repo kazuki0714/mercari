@@ -35,9 +35,19 @@ class ItemsController < ApplicationController
   end
 
  def show
-  @item = Item.find_by(id: params[:id])
+  @items = Item.all.order(created_at: :desc)
+  @items = Item.paginate(page: params[:page], per_page: 20)
  end
 
+ def search
+  @items = Item.search(params[:search])
+  if @items.brank?
+    render("items/noresult")
+  end
+ end
+
+  def noresult
+  end
   private
 
   def item_params

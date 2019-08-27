@@ -1,0 +1,20 @@
+<p>検索結果</p>
+<%= form_tag(items_search_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索', :name => nil %>
+<% end %>
+
+  <h4>商品一覧</h4>
+<div class="main item-index">
+  <% @items.each do |item| %>
+  <%= link_to(item_path(item), class: 'list-content') do %>
+     <div class="item-image">
+          <img src="<%= item.image %>" width="100">
+           <%= item.title %>
+           <%= item.price %>
+     </div>
+    <% end %>
+    <% end %>
+
+</div>
+<%= will_paginate @items %>
