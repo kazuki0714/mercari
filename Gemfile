@@ -69,8 +69,5 @@ gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 #gem 'rails-i18n', '~> 6.0.0' # For 6.0.0 or higher
 gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
-
-
 gem 'sqlite3', group: [:development, :test]
 gem 'pg', group: :production
-end
