@@ -3,10 +3,10 @@ Rails.application.routes.draw do
  resources :items
  resources :carts, only: [:show]
 
-  #root "top#index"　
+  root "top#index"　
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get "/" =>"top#index"
+  #get "/" =>"top#index"
 
 
   get "items/search" => "items#seach"
