@@ -1,0 +1,1039 @@
+Started GET "/" for ::1 at 2019-08-09 18:38:40 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 25ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-08-09 19:19:16 +0900
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20190809100902)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(45) NOT NULL, "name" varchar(45) NOT NULL, "password" varchar(45) NOT NULL, "zipcode" varchar(7) NOT NULL, "address" varchar(255) NOT NULL, "apartment" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190809100902_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190809100902"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-09 10:25:17.629587"], ["updated_at", "2019-08-09 10:25:17.629587"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20190809104437)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190809104437_create_items.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar NOT NULL, "title" varchar NOT NULL, "description" varchar NOT NULL, "stock" varchar NOT NULL, "price" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190809104437_create_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190809104437"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCarts (20190809105357)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190809105357_create_carts.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "carts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190809105357_create_carts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190809105357"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAddresses (20190809105805)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190809105805_create_addresses.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "addresses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "zipcode" integer, "address" varchar, "same_user_address" boolean DEFAULT 1, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190809105805_create_addresses.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190809105805"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePayments (20190809110644)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190809110644_create_payments.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "payments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "card_type" varchar(5) NOT NULL, "card_number" integer(16) NOT NULL, "card_name" varchar(45) NOT NULL, "cvv" integer(3) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190809110644_create_payments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190809110644"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateHistories (20190809111346)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190809111346_create_histories.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "histories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190809111346_create_histories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190809111346"]]
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-08-20 11:32:23 +0900
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 22ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup/user_info" for ::1 at 2019-08-20 12:19:49 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/signup/user_info"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-08-20 12:32:13 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (10.4ms)
+Completed 200 OK in 22ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup/user_info" for ::1 at 2019-08-20 12:32:20 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/signup/user_info"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/signup" for ::1 at 2019-08-20 12:32:22 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 2138ms (Views: 2115.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 12:41:11 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gPMBDvL8v9Y8wZhWfPx53xFNWRxupOFEQvWvKTP2hDz6EPdCKSGxD5e1BsXeK9xHPIzJ+rb9Ar+5R/MAAnD24A==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 219ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007fb8f939a148>
+Did you mean?  user_path):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started GET "/" for ::1 at 2019-08-20 12:43:37 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 12:43:44 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 61ms (Views: 45.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 12:43:49 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IzyYh73sInLkYAUDSP6+RY9iazvoyU5qCHFLoswCUAhZ327LZjEsq08Um5DqKRvdoqP73TCQrZHzwxeL/YQi1A==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007fb8f9449940>
+Did you mean?  user_path):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started POST "/users" for ::1 at 2019-08-20 12:45:23 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IzyYh73sInLkYAUDSP6+RY9iazvoyU5qCHFLoswCUAhZ327LZjEsq08Um5DqKRvdoqP73TCQrZHzwxeL/YQi1A==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 90ms (Views: 54.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 12:45:25 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dzOusk73j2X+2dSnLJRUKLxf8nK0pMXSNxGUHDZM4+4N0Fj+lSqBvFWtSjSOQ/GwkZ5ilGz9JinMo8g1B8qRMg==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 43ms (Views: 35.1ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2019-08-20 12:47:16 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (4.9ms)
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2019-08-20 12:47:19 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:6:in `show'
+Started GET "/signup" for ::1 at 2019-08-20 12:47:43 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 12:47:45 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yDs39yaVOwSkvpPK4pr+TLcFZET3DigOlMt4ZApH4fiy2MG7/Ug13Q/KDVlATVvUmsT0oi9Xy/VveSRNO8GTJA==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 42ms (Views: 35.1ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/users" for ::1 at 2019-08-20 12:52:21 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"so7bI+0pRMCElR5/nJ+aUroGcY8PI+nOy605P49xP13IbS1vNvRKGS/hgOw+SD/Kl8fhadd6CjUwH2UWvvdNgQ==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 64ms (Views: 50.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 12:52:27 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 12:52:29 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oLZy8MKwJneHijmW3X70UNsx62hRgVQy3g++9jYFqAjaVYS8GW0oriz+pwV/qVHI9vB7jonYt8klveLfB4Pa1A==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 53ms (Views: 47.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 12:58:05 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IdF3/B1N9Bm2BF1dOj0HMGvNNCVm1AegcFBQ7skMWQFbMoGwxpD6wB1ww86Y6qKoRgykw76N5FuL4gzH+Ior3Q==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 65ms (Views: 43.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-08-20 12:58:08 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 12:58:10 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 96ms (Views: 94.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 12:58:13 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5K3lAMr7F0rsRRYljpXVXBeFRol7Mxi8RBM15wCrpdKeThNMESYZk0cxiLYsQnDEOkTWb6Nq+0e/oWnOMS3XDg==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 58ms (Views: 45.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 13:05:33 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 65ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 13:05:36 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b+gwloyFIY2Jmue62RjwCfAeoj0u+83xXUw7V/N09QEVC8baV1gvVCLueSl7z1WR3d8y2/aiLgqm/md+wvKH3Q==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 61ms (Views: 52.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 13:07:50 +0900
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 265ms (Views: 240.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 13:07:52 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A2Iz7A08AEopeefMVgvN72PWCdWAgMthR161dWMZTwV5gcWg1uEOk4INeV/03Gh3TheZM1jZKJq87OlcUp892Q==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 73ms (Views: 58.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 13:09:30 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 71ms (Views: 52.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 13:09:33 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uyU0SWy4IcwHKyCx4JChrhp3Lsdk6kggV9h6B1C9zrnBxsIFt2UvFaxfviJCRwQ2N7a+Ibyzq9usaiYuYTu8ZQ==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 65593ms (Views: 41.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2019-08-20 13:13:36 +0900
+  
+SyntaxError (/Users/ps005064/mercari_001/config/routes.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  get 'users/new'
+       ^~~~~
+/Users/ps005064/mercari_001/config/routes.rb:4: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  get 'users/new'
+                ^
+/Users/ps005064/mercari_001/config/routes.rb:5: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+  get 'users/create'
+       ^~~~~):
+  
+config/routes.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+config/routes.rb:4: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+config/routes.rb:5: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+Started GET "/users" for ::1 at 2019-08-20 13:17:18 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-08-20 13:17:33 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 13:17:37 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/Users/ps005064/mercari_001/app/views/users/new.html.erb:1: syntax error, unexpected ':', expecting ')'
+...fer.append=  form_with(/users/:id) do |f| @output_buffer.saf...
+...                              ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:16: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/users/new.html.erb:1: syntax error, unexpected ':', expecting ')'
+app/views/users/new.html.erb:16: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/signup" for ::1 at 2019-08-20 13:19:11 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ps005064/mercari_001/app/views/users/new.html.erb:6: unknown regexp options - dv
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:6: unmatched close parenthesis: /users) do |f| @output_buffer.safe_append='
+
+  <div class="form-group">
+    '.freeze;@output_buffer.append=( f.label :email, '\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9' );@output_buffer.safe_append='
+    '.freeze;@output_buffer.append=( f.email_field :email, class: 'form-control' );@output_buffer.safe_append='
+  </i
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:8: syntax error, unexpected '<'
+  <div class="form-group">
+  ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...bel :password, 'パスワード' );@output_buffer.safe_appen...
+...                ^~~~~~~~~~~~~~~
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...d_field :password, class: 'form-control' );@output_buffer.sa...
+...                           ^~~~
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:10: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...password, class: 'form-control' );@output_buffer.safe_append...
+...                              ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:11: syntax error, unexpected '<', expecting keyword_end
+  </div>
+  ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: unterminated regexp meets end of file
+          end
+             ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: regexp encoding option 'n' differs from source encoding 'UTF-8'
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: /.../n has a non escaped non ASCII character in non ASCII-8BIT script: /div>
+
+  '.freeze;@output_buffer.append=( f.submit '\u767B\u9332\u3059\u308B', class: 'btn btn-primary btn-block' );@output_buffer.safe_append='
+'.freeze; end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+/m
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/users/new.html.erb:6: unknown regexp options - dv
+app/views/users/new.html.erb:6: unmatched close parenthesis: /users) do |f| @output_buffer.safe_append='
+app/views/users/new.html.erb:8: syntax error, unexpected '<'
+app/views/users/new.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/views/users/new.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/views/users/new.html.erb:10: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/users/new.html.erb:11: syntax error, unexpected '<', expecting keyword_end
+app/views/users/new.html.erb:18: unterminated regexp meets end of file
+app/views/users/new.html.erb:18: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/users/new.html.erb:18: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /div>
+app/views/users/new.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/signup" for ::1 at 2019-08-20 13:19:18 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ps005064/mercari_001/app/views/users/new.html.erb:6: unknown regexp options - dv
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:6: unmatched close parenthesis: /users) do |f| @output_buffer.safe_append='
+
+  <div class="form-group">
+    '.freeze;@output_buffer.append=( f.label :email, '\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9' );@output_buffer.safe_append='
+    '.freeze;@output_buffer.append=( f.email_field :email, class: 'form-control' );@output_buffer.safe_append='
+  </i
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:8: syntax error, unexpected '<'
+  <div class="form-group">
+  ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...bel :password, 'パスワード' );@output_buffer.safe_appen...
+...                ^~~~~~~~~~~~~~~
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...d_field :password, class: 'form-control' );@output_buffer.sa...
+...                           ^~~~
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:10: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...password, class: 'form-control' );@output_buffer.safe_append...
+...                              ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:11: syntax error, unexpected '<', expecting keyword_end
+  </div>
+  ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: unterminated regexp meets end of file
+          end
+             ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: regexp encoding option 'n' differs from source encoding 'UTF-8'
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: /.../n has a non escaped non ASCII character in non ASCII-8BIT script: /div>
+
+  '.freeze;@output_buffer.append=( f.submit '\u767B\u9332\u3059\u308B', class: 'btn btn-primary btn-block' );@output_buffer.safe_append='
+'.freeze; end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+/m
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/users/new.html.erb:6: unknown regexp options - dv
+app/views/users/new.html.erb:6: unmatched close parenthesis: /users) do |f| @output_buffer.safe_append='
+app/views/users/new.html.erb:8: syntax error, unexpected '<'
+app/views/users/new.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/views/users/new.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/views/users/new.html.erb:10: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/users/new.html.erb:11: syntax error, unexpected '<', expecting keyword_end
+app/views/users/new.html.erb:18: unterminated regexp meets end of file
+app/views/users/new.html.erb:18: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/users/new.html.erb:18: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /div>
+app/views/users/new.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2019-08-20 13:19:21 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (1.5ms)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 13:19:26 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ps005064/mercari_001/app/views/users/new.html.erb:6: unknown regexp options - dv
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:6: unmatched close parenthesis: /users) do |f| @output_buffer.safe_append='
+
+  <div class="form-group">
+    '.freeze;@output_buffer.append=( f.label :email, '\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9' );@output_buffer.safe_append='
+    '.freeze;@output_buffer.append=( f.email_field :email, class: 'form-control' );@output_buffer.safe_append='
+  </i
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:8: syntax error, unexpected '<'
+  <div class="form-group">
+  ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...bel :password, 'パスワード' );@output_buffer.safe_appen...
+...                ^~~~~~~~~~~~~~~
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...d_field :password, class: 'form-control' );@output_buffer.sa...
+...                           ^~~~
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:10: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...password, class: 'form-control' );@output_buffer.safe_append...
+...                              ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:11: syntax error, unexpected '<', expecting keyword_end
+  </div>
+  ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: unterminated regexp meets end of file
+          end
+             ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: regexp encoding option 'n' differs from source encoding 'UTF-8'
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: /.../n has a non escaped non ASCII character in non ASCII-8BIT script: /div>
+
+  '.freeze;@output_buffer.append=( f.submit '\u767B\u9332\u3059\u308B', class: 'btn btn-primary btn-block' );@output_buffer.safe_append='
+'.freeze; end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+/m
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/users/new.html.erb:6: unknown regexp options - dv
+app/views/users/new.html.erb:6: unmatched close parenthesis: /users) do |f| @output_buffer.safe_append='
+app/views/users/new.html.erb:8: syntax error, unexpected '<'
+app/views/users/new.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/views/users/new.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/views/users/new.html.erb:10: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/users/new.html.erb:11: syntax error, unexpected '<', expecting keyword_end
+app/views/users/new.html.erb:18: unterminated regexp meets end of file
+app/views/users/new.html.erb:18: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/users/new.html.erb:18: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /div>
+app/views/users/new.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/signup" for ::1 at 2019-08-20 13:19:55 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    1: <%= form_with(/users/) do |f| %>
+    2: 
+    3:   <div class="form-group">
+    4:     <%= f.label :email, 'メールアドレス' %>
+  
+app/views/users/new.html.erb:1:in `_app_views_users_new_html_erb___177107351462732602_70344951233200'
+Started GET "/signup" for ::1 at 2019-08-20 13:20:01 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ps005064/mercari_001/app/views/users/new.html.erb:6: unknown regexp options - dv
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:6: unmatched close parenthesis: /users) do |f| @output_buffer.safe_append='
+
+  <div class="form-group">
+    '.freeze;@output_buffer.append=( f.label :email, '\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9' );@output_buffer.safe_append='
+    '.freeze;@output_buffer.append=( f.email_field :email, class: 'form-control' );@output_buffer.safe_append='
+  </i
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:8: syntax error, unexpected '<'
+  <div class="form-group">
+  ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...bel :password, 'パスワード' );@output_buffer.safe_appen...
+...                ^~~~~~~~~~~~~~~
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...d_field :password, class: 'form-control' );@output_buffer.sa...
+...                           ^~~~
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:10: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...password, class: 'form-control' );@output_buffer.safe_append...
+...                              ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:11: syntax error, unexpected '<', expecting keyword_end
+  </div>
+  ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: unterminated regexp meets end of file
+          end
+             ^
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: regexp encoding option 'n' differs from source encoding 'UTF-8'
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: /.../n has a non escaped non ASCII character in non ASCII-8BIT script: /div>
+
+  '.freeze;@output_buffer.append=( f.submit '\u767B\u9332\u3059\u308B', class: 'btn btn-primary btn-block' );@output_buffer.safe_append='
+'.freeze; end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+/m
+/Users/ps005064/mercari_001/app/views/users/new.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/users/new.html.erb:6: unknown regexp options - dv
+app/views/users/new.html.erb:6: unmatched close parenthesis: /users) do |f| @output_buffer.safe_append='
+app/views/users/new.html.erb:8: syntax error, unexpected '<'
+app/views/users/new.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/views/users/new.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/views/users/new.html.erb:10: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/users/new.html.erb:11: syntax error, unexpected '<', expecting keyword_end
+app/views/users/new.html.erb:18: unterminated regexp meets end of file
+app/views/users/new.html.erb:18: regexp encoding option 'n' differs from source encoding 'UTF-8'
+app/views/users/new.html.erb:18: /../n has a non escaped non ASCII character in non ASCII-8BIT script: /div>
+app/views/users/new.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/signup" for ::1 at 2019-08-20 13:21:14 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 13:21:17 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4O9Uh4AaaTyWGlOOJpVmfkO9DyXGKaczDhAeBxc7qC6aDKLLW8dn5T1uzR2EQsPmbnyfwx5wRMj1okIuJr3a8g==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 36728ms (Views: 52.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 13:22:15 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 239ms (Views: 212.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 13:22:19 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bCzZMXZhes7e2My3sL9Os8lt1cnv4vB5DeUSo0qxznoWzy99rbx0F3WsUiQSaOsr5KxFLze7E4L2V06Keze8pg==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 70ms (Views: 58.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-08-20 13:22:40 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (1.5ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 13:22:44 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 80ms (Views: 55.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 13:23:27 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gpvBK7NQ2aTDVoK2H0de2edaYrYbX5BxQOfztENMGCb4eDdnaI3XfWgiHCW9kPtBypvyUMMGc4q7Va+dcspq+g==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/create.html.erb within layouts/application
+  Rendered users/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 47ms (Views: 31.6ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2019-08-20 13:25:31 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 13:27:32 +0900
+  
+SyntaxError (/Users/ps005064/mercari_001/app/controllers/users_controller.rb:31: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:31: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/signup" for ::1 at 2019-08-20 13:27:48 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 64ms (Views: 47.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 13:27:51 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lp6zYp7yM0ORCSYj859khbEfVtVydV3rGeYJVhfdjwXsfUUuRS89mjp9uLBRSMEdnN7GM6osvhDiVFV/Jlv92Q==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+Redirected to http://localhost:3000/users
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/users_controller.rb:22:in `create'
+Started POST "/users" for ::1 at 2019-08-20 13:28:23 +0900
+  
+SyntaxError (/Users/ps005064/mercari_001/app/controllers/users_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end
+  end
+     ^):
+  
+app/controllers/users_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/users" for ::1 at 2019-08-20 13:28:46 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lp6zYp7yM0ORCSYj859khbEfVtVydV3rGeYJVhfdjwXsfUUuRS89mjp9uLBRSMEdnN7GM6osvhDiVFV/Jlv92Q==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 67ms (Views: 42.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 13:28:48 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HpUE8c2dMJBaV4LDtNwFeTi52cRCk/fqzMF/BEJ08OhkdvK9FkA+SfEjHFAWC6DhFXhJIprKFBE3cyMtc/KCNA==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 76ms (Views: 67.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2019-08-20 13:40:53 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 94ms (Views: 93.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-08-20 13:40:57 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 13:41:01 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 60ms (Views: 37.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 13:41:05 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Co3uJtv7BU51jr0U76odA4oKQG+/j0Tyg1mbh69AZS9wbhhqACYLl976I4dNfbibp8vQiWfWpwl468eunsYX8w==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007fe213620d20>
+Did you mean?  user_path):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started POST "/users" for ::1 at 2019-08-20 13:42:24 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Co3uJtv7BU51jr0U76odA4oKQG+/j0Tyg1mbh69AZS9wbhhqACYLl976I4dNfbibp8vQiWfWpwl468eunsYX8w==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007fe21438e660>
+Did you mean?  user_path):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started POST "/users" for ::1 at 2019-08-20 13:43:19 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Co3uJtv7BU51jr0U76odA4oKQG+/j0Tyg1mbh69AZS9wbhhqACYLl976I4dNfbibp8vQiWfWpwl468eunsYX8w==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007fe2169b38e0>
+Did you mean?  user_path):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started GET "/" for ::1 at 2019-08-20 13:43:22 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ps005064/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-20 13:43:27 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 76ms (Views: 52.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2019-08-20 13:43:31 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7dewGx6pdOg2KZtrm4AgOXZz1jNj8gDfX0C06o4IU/GXNEZXxXR6MZ1dBfg5V4WhW7JG1bur4ySk8ujDv44hLQ==", "user"=>{"email"=>"1@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007fe216e4b7e0>
+Did you mean?  user_path):
+  
+app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m

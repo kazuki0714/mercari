@@ -11,6 +11,28 @@
 
   <body>
 
+    <%# ヘッダー部分を共通化して app/views/partial/_header.html.erb のコードを表示%>
+    <% if user_signed_in? %>
+
+    <header class="header">
+      <nav class="nav">
+        <ul class="header_menu">
+          <li class="nav-link"><%=current_user.name%></li>
+          <li class="header_menu_title"><%= link_to "メルカリ", "/", class: "nav-link" %></li>
+          <li>
+            <ul class="header_menu_inner">
+              <%# リストを作成するリンクは今後開発していくので、今は"#"。 %>
+              <li><%= link_to "出品", "/items/new", class: "nav-link listNew" %></li>
+              <li><%= link_to "My page", "/users/mypage" %></li>
+              <li><%= link_to "サインアウト", destroy_user_session_path, class: "nav-link", method: :delete %></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <% end %>
+
+
     <!-- ==========ここからフラッシュメッセージ========== -->
     <% if flash[:notice] %>
       <div class="alert alert-info"><%= flash[:notice] %></div>

@@ -1,0 +1,49 @@
+image<div class="main sell-new">
+  <div class="container">
+    <div class="form-heading">新規出品登録</div>
+    <div class="form sell-form">
+      <div class="form-body">
+        <% @item.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+
+        <%= form_tag("/sell/confirm",{multipart:true}) do %>
+
+          <p>商品名</p>
+          <input name="title" value="<%= @item.title %>">
+          <p>金額</p>
+          <input name="price" value="<%= @item.price %>">
+          <p>在庫数</p>
+          <input name="stock" value="<%= @item.stock %>">
+          <p>商品説明</p>
+          <input name="description" value="<%= @item.description %>">
+          <p>商品画像</p>
+          <input type="file" name="image" value="<%= @item.image %>">
+          <input type="submit" value="新規出品登録">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= form_for @item, :url sell_confirm_path, :html => { :multipart => true } do |f| %>
+
+<%= f.label :"商品名" %>
+<%= f.text_field :title %>
+
+<%= f.label :"画像" %>
+<%= f.file_field :image %>
+
+<%= f.label :"価格" %>
+<%= f.text_field :price %>
+
+<%= f.label :"在庫数" %>
+<%= f.text_field :stock %>
+
+<%= f.label :"商品説明" %>
+<%= f.text_field :description %>
+
+<%= f.submit "確認画面へ", class: "btn btn-large btn-primary" %>
+<% end %>

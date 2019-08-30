@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_15_083202) do
+ActiveRecord::Schema.define(version: 2019_08_26_054024) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer "zipcode"
@@ -20,10 +20,20 @@ ActiveRecord::Schema.define(version: 2019_08_15_083202) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["item_id"], name: "index_cart_items_on_item_id"
+  end
+
   create_table "carts", force: :cascade do |t|
     t.integer "quantity", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "item_id"
   end
 
   create_table "histories", force: :cascade do |t|
@@ -40,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_083202) do
     t.integer "status", limit: 1, default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -59,10 +70,10 @@ ActiveRecord::Schema.define(version: 2019_08_15_083202) do
     t.datetime "remember_created_at"
     t.string "name"
     t.integer "zipcode"
-    t.string "string"
     t.string "apartment"
     t.datetime "updated_at", null: false
     t.datetime "created_at", null: false
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

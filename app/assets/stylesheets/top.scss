@@ -1,3 +1,17 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h4 {
+  font-family:"Avenir Next";
+  text-align:center;
+}
+#item-container {
+  width: 25%;
+  float: left;
+  border: 1px solid #000000;
+}
+.list-content {
+  width: 25%;
+  float: left;
+  border: 1px solid #000000;
+}
